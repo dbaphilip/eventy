@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-1 col-5">
+      <h1 class="gochi">Register for <%= @event.name %></h1>
+
+      <%= form_for [@event, @registration] do |f| %>
+      <!--  -->
+      <%= render "shared/errors", object: @registration %>
+
+      <div class="my-4">
+        <%= f.text_field :name, class: "inter form-control", placeholder: "Name"
+        %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.text_field :email, class: "inter form-control", placeholder:
+        "Email" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.select :how_heard, Registration::HOW_HEARD_OPTIONS, {prompt:
+        "Choose one"}, {class: "form-control gochi"} %>
+      </div>
+
+      <%= f.submit "Register", class: "boxshadow btn btn-lg gochi btn-primary"
+      %>
+      <!--  -->
+      <% end %>
+    </div>
+  </div>
+</div>

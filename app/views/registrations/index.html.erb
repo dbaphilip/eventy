@@ -1,0 +1,42 @@
+<div class="container gochi">
+  <div class="row">
+    <div class="col-8">
+      <div class="d-flex">
+        <%= image_tag @event.image_file_name %>
+        <h1 class="gochi"><%= link_to @event.name, @event %></h1>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">How heard</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% serial = 0 %>
+          <!--  -->
+          <% @registrations.each do |r| %>
+          <!--  -->
+          <% serial += 1 %>
+
+          <tr>
+            <th scope="row"><%= serial %></th>
+            <td><%= r.name %></td>
+            <td><%= r.how_heard %></td>
+          </tr>
+
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-end">
+        <p class="gochi action mx-2">
+          <%= link_to "Register", new_event_registration_path(@event) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+<div class="flash text-success d-flex justify-content-center gochi fs-4">
+  <p><%= flash[:notice] %></p>
+</div>
+<% end %>
+
+<% if flash[:alert] %>
+<div class="flash text-danger d-flex justify-content-center gochi fs-4">
+  <p><%= flash[:alert] %></p>
+</div>
+<% end %>

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <h1 class="gochi gray-out"><%= @event.name %></h1>
+    <div class="col-6">
+      <p class="inter fs-5 delete-dialog">
+        Are you sure you want to <strong>permanently</strong> delete this event?
+      </p>
+
+      <div class="d-flex justify-content-end">
+        <p class="gochi action mx-2"><%= link_to "Cancel", @event %></p>
+
+        <p class="gochi action delete mx-2">
+          <%= link_to "Confirm Delete", (@event), data: {turbo_method: :delete}
+          %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

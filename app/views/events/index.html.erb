@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-1 col-10">
+      <% @events.each do |event| %>
+
+      <div class="gochi row event mb-3 pt-3">
+        <div class="col-1">
+          <%= link_to event do %> <%= image_tag event.image_file_name %> <% end
+          %>
+        </div>
+        <div class="col-5">
+          <%= link_to event do %>
+          <h1 class="fs-4 fw-bold"><%= event.name %></h1>
+          <p class="fs-5">
+            <%= truncate(event.description, length: 35, separator: " ") %>
+          </p>
+          <% end %>
+        </div>
+        <div class="col-6 d-flex justify-content-between">
+          <p class="gochi pill price"><%= price(event) %></p>
+          <p class="gochi pill"><%= day_and_time(event) %></p>
+          <p class="gochi pill"><%= event.location %></p>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
